@@ -1,0 +1,133 @@
+<div role="form">
+  <div class="box-body">
+    <field id="employeeName" label="Employee Name" grid="12 6 4" placeholder="Employee Name"
+    model="saCtrl.supervisorApproval.employeeName" readonly="saCtrl.tabUpdate"></field>
+    <field id="departmentName" label="Department" grid="12 6 4" placeholder="Department Name"
+    model="saCtrl.supervisorApproval.departmentName" readonly="saCtrl.tabUpdate"></field>
+    <field id="codDept" label="Dept Code" grid="12 6 4" placeholder="Department Code"
+    type="number" model="saCtrl.supervisorApproval.codDept" readonly="saCtrl.tabUpdate"></field>
+    <field id="status" label="Status" grid="12 6 4" placeholder="Status of Form"
+    model="saCtrl.supervisorApproval.status" readonly="saCtrl.tabUpdate"></field>
+
+    <field id="totalHours" label="Total Hours" grid="12 6 4" placeholder="Total Hours"
+    model="saCtrl.supervisorApproval.totalHours" readonly="saCtrl.tabUpdate"></field>
+
+    <field id="email" label="Email" grid="12 6 4" placeholder="Email"
+    model="saCtrl.supervisorApproval.email" readonly="saCtrl.tabUpdate"></field>
+
+    <field id="signatureEmployee" label="Employee Signature" grid="12 6 4" placeholder="Signature"
+    model="saCtrl.supervisorApproval.signatureEmployee" readonly="saCtrl.tabUpdate" ng-show="false"></field>
+
+    <field id="signatureSupervisor" label="Supervisor Signature" grid="12 6 4" placeholder="Signature Supervisor"
+    model="saCtrl.supervisorApproval.signatureSupervisor" readonly="saCtrl.tabUpdate" ng-show="false"></field>
+
+    <div class="col-sm-12">
+      <fieldset>
+        <legend>Pay Period</legend>
+        <table class="table">
+          <tbody>
+            <tr>
+              <td>
+                From:
+              </td>
+              <td>
+                <field id="monthFrom" label="mm" grid="12 6 4" placeholder="Put Employee Name"
+                  model="saCtrl.supervisorApproval.monthFrom" readonly="saCtrl.tabUpdate"></field>
+                <field id="dayFrom" label="dd" grid="12 6 4" placeholder="Put Employee Name"
+                  model="saCtrl.supervisorApproval.dayFrom" readonly="saCtrl.tabUpdate"></field>
+              </td>
+              <td>
+                To:
+              </td>
+              <td>
+                <field id="monthTo" label="mm" grid="12 6 4" placeholder="Put Employee Name"
+                  model="saCtrl.supervisorApproval.monthTo" readonly="saCtrl.tabUpdate"></field>
+                <field id="dayTo" label="dd" grid="12 6 4" placeholder="Put Employee Name"
+                  model="saCtrl.supervisorApproval.dayTo" readonly="saCtrl.tabUpdate"></field>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </fieldset>
+    </div>
+
+    <!--
+    <div class="col-xs-12">
+      <fieldset>
+        <legend>Resumo</legend>
+        <div ng-include="'supervisorApproval/summary.html'"></div>
+      </fieldset>
+    </div>
+  -->
+
+    <div class="col-xs-12">
+      <fieldset>
+        <legend>Description</legend>
+        <div ng-include="'supervisorApproval/gridLineList.html'"></div>
+      </fieldset>
+    </div>
+
+    <div class="col-xs-12 col-sm-6">
+      <fieldset>
+        <legend></legend>
+        <table class="table">
+          <tbody>
+            <tr>
+              <td>
+                TOTAL HOURS:
+              </td>
+              <td>
+                <field id="totalHours" label="Total Hours" grid="12 6 4" placeholder="Put Employee Name"
+                  model="saCtrl.supervisorApproval.totalHours" readonly="saCtrl.tabUpdate"></field>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </fieldset>
+    </div>
+
+    <div class="col-sm-12">
+      <fieldset>
+        <legend>For Office Use Only</legend>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Regular</th>
+              <th>O/T</th>
+              <th>Absences</th>
+              <th>Bank</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <field id="regularForOffice" label="Regular" grid="12 6 4" placeholder="Regular"
+                  model="saCtrl.supervisorApproval.regularForOffice" readonly="saCtrl.tabUpdate"></field>
+              </td>
+              <td>
+                <field id="overTimeForOffice" label="O/T" grid="12 6 4" placeholder="O/T"
+                model="saCtrl.supervisorApproval.overTimeForOffice" readonly="saCtrl.tabUpdate"></field>
+              </td>
+              <td>
+                <field id="absencesDays" label="Days" grid="12 6 4" placeholder="absencesDays"
+                  model="saCtrl.supervisorApproval.absencesDays" readonly="saCtrl.tabUpdate"></field>
+                <field id="absencesReasons" label="Reasons" grid="12 6 4" placeholder="absencesReasons"
+                  model="saCtrl.supervisorApproval.absencesReasons" readonly="saCtrl.tabUpdate"></field>
+              </td>
+              <td>
+                <field id="regularForOffice" label="Regular" grid="12 6 4" placeholder="Regular"
+                  model="saCtrl.supervisorApproval.regularForOffice" readonly="saCtrl.tabUpdate"></field>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </fieldset>
+    </div>
+
+  </div>
+  <div class="box-footer">
+    <button class="btn btn-info" ng-if="saCtrl.tabUpdate" ng-click="saCtrl.update()">Approve</button>
+    <button class="btn btn-danger" ng-if="saCtrl.tabUpdate" ng-click="saCtrl.review()">Review</button>
+    <button class="btn btn-default" ng-click="saCtrl.refresh()">Cancel</button>
+  </div>
+</div>

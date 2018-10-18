@@ -1,0 +1,41 @@
+<content-header name="Approval" small="Supervisor Approval"></content-header>
+
+<section class="content">
+  <div class="nav-tabs-custom" ng-controller="SupervisorApprovalCtrl as saCtrl">
+    <ul class="nav nav-tabs">
+      <li ng-if="saCtrl.tabList" ng-class="{active: saCtrl.tabList}">
+        <a href data-target="#tabList" data-toggle="tab">
+          <i class="fa fa-bars"></i> List of Time Card Forms
+        </a>
+      </li>
+      <!--
+      <li ng-if="saCtrl.tabCreate">
+        <a href data-target="#tabCreate" data-toggle="tab">
+          <i class="fa fa-plus"></i> New Form
+        </a>
+      </li>
+      -->
+      <li ng-if="saCtrl.tabUpdate" ng-class="{active: saCtrl.tabUpdate}">
+        <a href data-target="#tabUpdate" data-toggle="tab">
+          <i class="fa fa-pencil"></i> Adjust Form
+        </a>
+      </li>
+      <li ng-if="saCtrl.tabDelete" ng-class="{active: saCtrl.tabDelete}">
+        <a href data-target="#tabDelete" data-toggle="tab">
+          <i class="fa fa-trash-o"></i> Delete Form
+        </a>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane" id="tabList" ng-include="'supervisorApproval/list.html'"
+        ng-class="{active: saCtrl.tabList}" ng-if="saCtrl.tabList"></div>
+      <div class="tab-pane div-borda-arredondada-transparente sombra" id="tabCreate" ng-include="'supervisorApproval/form.html'"
+        ng-if="saCtrl.tabCreate"></div>
+      <div class="tab-pane div-borda-arredondada-transparente sombra" id="tabUpdate"
+      ng-include="'supervisorApproval/form.html'" ng-class="{active: saCtrl.tabUpdate}"
+      ng-if="saCtrl.tabUpdate"></div>
+      <div class="tab-pane div-borda-arredondada-transparente sombra" id="tabDelete" ng-include="'supervisorApproval/form.html'"
+        ng-class="{active: saCtrl.tabDelete}" ng-if="saCtrl.tabDelete"></div>
+    </div>
+  </div>
+</section>

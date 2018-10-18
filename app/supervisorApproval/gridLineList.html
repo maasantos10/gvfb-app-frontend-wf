@@ -1,0 +1,73 @@
+<div class="col-xs-12">
+  <table class="table">
+    <thead>
+      <tr>
+        <th colspan="2">Date<p>
+        mm dd</p></th>
+        <th>Start</th>
+        <th>Finish</th>
+        <th>Total</th>
+        <th>Lunch</th>
+        <th>Reg</th>
+        <th>O/T</th>
+        <th>Bank</th>
+        <th>ABSENCES<p>
+        Reason</p></th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="gridLine in saCtrl.supervisorApproval.gridLineInformation">
+        <td>
+          <input ng-model="gridLine.monthLineGrid" class="form-control" placeholder="mm"
+            ng-readonly="saCtrl.tabUpdate" />
+        </td>
+        <td>
+          <input ng-model="gridLine.dayLineGrid" class="form-control" placeholder="dd"
+            ng-readonly="saCtrl.tabUpdate" />
+        </td>
+        <td>
+          <input ng-model="gridLine.startTime" class="form-control" placeholder="Start"
+            ng-readonly="saCtrl.tabUpdate"  />
+        </td>
+        <td>
+          <input ng-model="gridLine.finishTime" class="form-control" placeholder="Finish"
+            ng-readonly="saCtrl.tabUpdate" />
+        </td>
+        <td>
+          <input ng-model="gridLine.totalTime" class="form-control" placeholder="Total"
+            ng-change="saCtrl.calculateValues()" ng-readonly="saCtrl.tabUpdate" />
+        </td>
+        <td>
+          <input ng-model="gridLine.lunchTime" class="form-control" placeholder="Lunch"
+            ng-readonly="saCtrl.tabUpdate" />
+        </td>
+        <td>
+          <input ng-model="gridLine.reg" class="form-control" placeholder="Reg"
+            ng-readonly="saCtrl.tabUpdate" />
+        </td>
+        <td>
+          <input ng-model="gridLine.overtime" class="form-control" placeholder="Overtime"
+            ng-readonly="saCtrl.tabUpdate" />
+        </td>
+        <td>
+          <input ng-model="gridLine.bank" class="form-control" placeholder="Bank"
+            ng-readonly="saCtrl.tabUpdate" />
+        </td>
+        <td>
+          <input ng-model="gridLine.absence" class="form-control" placeholder="Indicate One Reason"
+            ng-readonly="saCtrl.tabUpdate" />
+        </td>
+        <td class="table-actions">
+          <button class="btn btn-success" ng-disabled="saCtrl.tabUpdate"
+            ng-click="saCtrl.addDebt($index)"><i class="fa fa-plus"></i></button>
+          <button class="btn btn-warning" ng-disabled="saCtrl.tabUpdate"
+            ng-click="saCtrl.cloneDebt($index, gridLine)"><i class="fa fa-clone"></i></button>
+          <button class="btn btn-danger" ng-disabled="saCtrl.tabUpdate"
+            ng-click="saCtrl.deleteDebt($index)"><i class="fa fa-trash-o"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <small>** Regular time is the first 8 hours worked. Overtime kicks in after 8 hours</small>
+</div>
